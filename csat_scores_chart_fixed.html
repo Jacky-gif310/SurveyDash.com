@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSAT Scores by Channel</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <canvas id="csatChart"></canvas>
+    <script>
+        var ctx = document.getElementById('csatChart').getContext('2d');
+        var csatChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Email', 'Inbound', 'Outcall'],
+                datasets: [{
+                    label: 'Average CSAT Score',
+                    data: [3.7753807106598987, 4.223098995695839, 4.216607354685647],
+                    backgroundColor: ['green', 'red', 'blue'],
+                    borderColor: ['darkgreen', 'darkred', 'darkblue'],
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'CSAT Score'
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

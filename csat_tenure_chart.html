@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSAT Scores by Tenure</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <canvas id="tenureChart"></canvas>
+    <script>
+        var ctx = document.getElementById('tenureChart').getContext('2d');
+        var tenureChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['0-30', '31-60', '61-90', '>90', 'On Job Training'],
+                datasets: [{
+                    label: 'Average CSAT Score',
+                    data: [4.204592470004138, 4.22581273116605, 4.323687752355316, 4.286512060808191, 3.9716964443658234],
+                    borderColor: 'purple',
+                    backgroundColor: 'rgba(128, 0, 128, 0.2)',
+                    borderWidth: 2,
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Tenure Bucket'
+                        }
+                    },
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'CSAT Score'
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

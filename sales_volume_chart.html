@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Volume by City</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <canvas id="salesChart"></canvas>
+    <script>
+        var ctx = document.getElementById('salesChart').getContext('2d');
+        var salesChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Nairobi', 'Mombasa', 'Kericho', 'Meru', 'Garissa', 'Malindi', 'Nyeri', 'Kisumu', 'Nakuru', 'Embu', 'Narok', 'Machakos', 'Eldoret', 'Kakamega', 'Thika', 'Kitale'],
+                datasets: [{
+                    label: 'Total Sales Volume',
+                    data: [23225819.0, 17991845.0, 2280487.0, 2247933.0, 2162804.0, 2101196.0, 1985801.0, 1829663.0, 1747987.0, 1707982.0, 1694850.0, 1690784.0, 1556112.0, 1540422.0, 1529432.0, 1467195.0],
+                    backgroundColor: 'orange',
+                    borderColor: 'darkorange',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Sales Volume (KSh)'
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
